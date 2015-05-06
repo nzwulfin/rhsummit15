@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<oval_definitions xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:unix-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:red-def="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+  <generator>
+    <oval:product_name>Red Hat Errata System</oval:product_name>
+    <oval:schema_version>5.10.1</oval:schema_version>
+    <oval:timestamp>2014-09-24T11:11:45</oval:timestamp>
+  </generator>
+
+  <definitions>
+    <definition id="oval:com.redhat.rhsa:def:20141293" version="601" class="patch">
+      <metadata>
+        <title>RHSA-2014:1293: bash security update (Critical)</title>
+    <affected family="unix">
+      <platform>Red Hat Enterprise Linux 6</platform>
+      <platform>Red Hat Enterprise Linux 5</platform>
+      <platform>Red Hat Enterprise Linux 7</platform>
+    </affected>
+    <reference source="RHSA" ref_id="RHSA-2014:1293-00" ref_url="https://rhn.redhat.com/errata/RHSA-2014-1293.html"/>
+      <reference source="CVE" ref_id="CVE-2014-6271" ref_url="https://www.redhat.com/security/data/cve/CVE-2014-6271.html"/>
+    <description>The GNU Bourne Again shell (Bash) is a shell and command language
+interpreter compatible with the Bourne shell (sh). Bash is the default
+shell for Red Hat Enterprise Linux.
+
+A flaw was found in the way Bash evaluated certain specially crafted
+environment variables. An attacker could use this flaw to override or
+bypass environment restrictions to execute shell commands. Certain
+services and applications allow remote unauthenticated attackers to
+provide environment variables, allowing them to exploit this issue.
+(CVE-2014-6271)
+
+For additional information on the CVE-2014-6271 flaw, refer to the
+Knowledgebase article at https://access.redhat.com/articles/1200223
+
+Red Hat would like to thank Stephane Chazelas for reporting this issue.
+
+All bash users are advised to upgrade to these updated packages, which
+contain a backported patch to correct this issue.
+</description>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~   advisory details   ~~~~~~~~~~~~~~~~~~~ -->
+
+<advisory from="secalert@redhat.com">
+        <severity>Critical</severity>
+        <rights>Copyright 2014 Red Hat, Inc.</rights>
+        <issued date="2014-09-24"/>
+        <updated date="2014-09-24"/>
+        <cve href="https://www.redhat.com/security/data/cve/CVE-2014-6271.html">CVE-2014-6271</cve>
+        <bugzilla href="https://bugzilla.redhat.com/1141597" id="1141597">CVE-2014-6271 bash: specially-crafted environment variables can be used to inject shell commands</bugzilla>
+    <affected_cpe_list>
+        <cpe>cpe:/o:redhat:enterprise_linux:7</cpe>
+        <cpe>cpe:/o:redhat:enterprise_linux:5</cpe>
+        <cpe>cpe:/o:redhat:enterprise_linux:6</cpe>
+    </affected_cpe_list>
+</advisory>
+      </metadata>
+      <criteria operator="OR">
+ 
+ <criteria operator="AND">
+ 
+ <criteria operator="OR">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293001" comment="Red Hat Enterprise Linux 6 Client is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293002" comment="Red Hat Enterprise Linux 6 Server is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293003" comment="Red Hat Enterprise Linux 6 Workstation is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293004" comment="Red Hat Enterprise Linux 6 ComputeNode is installed" />
+ 
+</criteria>
+<criteria operator="OR">
+ 
+ <criteria operator="AND">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293005" comment="bash is earlier than 0:4.1.2-15.el6_5.1" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293006" comment="bash is signed with Red Hat redhatrelease2 key" />
+ 
+</criteria>
+<criteria operator="AND">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293007" comment="bash-doc is earlier than 0:4.1.2-15.el6_5.1" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293008" comment="bash-doc is signed with Red Hat redhatrelease2 key" />
+ 
+</criteria>
+
+</criteria>
+
+</criteria>
+<criteria operator="AND">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293009" comment="Red Hat Enterprise Linux 5 is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293010" comment="bash is earlier than 0:3.2-33.el5.1" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293011" comment="bash is signed with Red Hat redhatrelease key" />
+ 
+</criteria>
+<criteria operator="AND">
+ 
+ <criteria operator="OR">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293012" comment="Red Hat Enterprise Linux 7 Client is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293013" comment="Red Hat Enterprise Linux 7 Server is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293014" comment="Red Hat Enterprise Linux 7 Workstation is installed" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293015" comment="Red Hat Enterprise Linux 7 ComputeNode is installed" />
+ 
+</criteria>
+<criteria operator="OR">
+ 
+ <criteria operator="AND">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293016" comment="bash is earlier than 0:4.2.45-5.el7_0.2" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293006" comment="bash is signed with Red Hat redhatrelease2 key" />
+ 
+</criteria>
+<criteria operator="AND">
+ <criterion test_ref="oval:com.redhat.rhsa:tst:20141293017" comment="bash-doc is earlier than 0:4.2.45-5.el7_0.2" /><criterion test_ref="oval:com.redhat.rhsa:tst:20141293008" comment="bash-doc is signed with Red Hat redhatrelease2 key" />
+ 
+</criteria>
+
+</criteria>
+
+</criteria>
+
+</criteria>
+
+    </definition>
+  </definitions>
+  <tests>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~   rpminfo tests   ~~~~~~~~~~~~~~~~~~~~~ -->
+    <rpminfo_test id="oval:com.redhat.rhsa:tst:20141293001"  version="601" comment="Red Hat Enterprise Linux 6 Client is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293001" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293003" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293002"  version="601" comment="Red Hat Enterprise Linux 6 Server is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293002" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293003" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293003"  version="601" comment="Red Hat Enterprise Linux 6 Workstation is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293003" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293003" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293004"  version="601" comment="Red Hat Enterprise Linux 6 ComputeNode is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293004" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293003" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293005"  version="601" comment="bash is earlier than 0:4.1.2-15.el6_5.1" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293005" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293004" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293006"  version="601" comment="bash is signed with Red Hat redhatrelease2 key" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293005" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293001" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293007"  version="601" comment="bash-doc is earlier than 0:4.1.2-15.el6_5.1" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293006" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293004" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293008"  version="601" comment="bash-doc is signed with Red Hat redhatrelease2 key" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293006" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293001" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293009"  version="601" comment="Red Hat Enterprise Linux 5 is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293007" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293005" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293010"  version="601" comment="bash is earlier than 0:3.2-33.el5.1" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293005" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293006" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293011"  version="601" comment="bash is signed with Red Hat redhatrelease key" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293005" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293002" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293012"  version="601" comment="Red Hat Enterprise Linux 7 Client is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293001" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293007" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293013"  version="601" comment="Red Hat Enterprise Linux 7 Server is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293002" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293007" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293014"  version="601" comment="Red Hat Enterprise Linux 7 Workstation is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293003" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293007" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293015"  version="601" comment="Red Hat Enterprise Linux 7 ComputeNode is installed" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293004" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293007" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293016"  version="601" comment="bash is earlier than 0:4.2.45-5.el7_0.2" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293005" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293008" />
+</rpminfo_test>
+<rpminfo_test id="oval:com.redhat.rhsa:tst:20141293017"  version="601" comment="bash-doc is earlier than 0:4.2.45-5.el7_0.2" check="at least one" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <object object_ref="oval:com.redhat.rhsa:obj:20141293006" />
+  <state state_ref="oval:com.redhat.rhsa:ste:20141293008" />
+</rpminfo_test>
+
+  </tests>
+
+  <objects>
+    <!-- ~~~~~~~~~~~~~~~~~~~~   rpminfo objects   ~~~~~~~~~~~~~~~~~~~~ -->
+    <rpminfo_object id="oval:com.redhat.rhsa:obj:20141293005"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>bash</name>
+</rpminfo_object>
+<rpminfo_object id="oval:com.redhat.rhsa:obj:20141293006"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>bash-doc</name>
+</rpminfo_object>
+<rpminfo_object id="oval:com.redhat.rhsa:obj:20141293007"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>redhat-release</name>
+</rpminfo_object>
+<rpminfo_object id="oval:com.redhat.rhsa:obj:20141293001"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>redhat-release-client</name>
+</rpminfo_object>
+<rpminfo_object id="oval:com.redhat.rhsa:obj:20141293004"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>redhat-release-computenode</name>
+</rpminfo_object>
+<rpminfo_object id="oval:com.redhat.rhsa:obj:20141293002"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>redhat-release-server</name>
+</rpminfo_object>
+<rpminfo_object id="oval:com.redhat.rhsa:obj:20141293003"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <name>redhat-release-workstation</name>
+</rpminfo_object>
+
+  </objects>
+  <states>
+    <!-- ~~~~~~~~~~~~~~~~~~~~   rpminfo states   ~~~~~~~~~~~~~~~~~~~~~ -->
+    <rpminfo_state id="oval:com.redhat.rhsa:ste:20141293001"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <signature_keyid  operation="equals">199e2f91fd431d51</signature_keyid>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293002"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <signature_keyid  operation="equals">5326810137017186</signature_keyid>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293003"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <version  operation="pattern match">^6[^\d]</version>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293004"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <evr datatype="evr_string" operation="less than">0:4.1.2-15.el6_5.1</evr>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293005"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <version  operation="pattern match">^5[^\d]</version>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293006"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <evr datatype="evr_string" operation="less than">0:3.2-33.el5.1</evr>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293007"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <version  operation="pattern match">^7[^\d]</version>
+</rpminfo_state>
+<rpminfo_state id="oval:com.redhat.rhsa:ste:20141293008"  version="601" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux">
+  <evr datatype="evr_string" operation="less than">0:4.2.45-5.el7_0.2</evr>
+</rpminfo_state>
+
+  </states>
+</oval_definitions>
+

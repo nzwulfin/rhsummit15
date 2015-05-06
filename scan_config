@@ -1,0 +1,10 @@
+---
+# This contains credentials, make sure to set permissions correctly
+login: demo-admin
+pass: Apollo13!
+# xccdf: "/usr/share/xml/scap/ssg/content/ssg-rhel6-ds.xml"
+# oscap_opts: "--profile xccdf_org.ssgproject.content_profile_C2S"
+xccdf: /usr/share/xml/scap/rhsa/com.redhat.rhsa-all.xccdf.xml
+oscap_opts: 
+sysgroup: ["SCAP Testing", "HA Web Services"]
+hostname: ["scap-target", "ep-builder02.lab.dlt.com"]

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Benchmark xmlns="http://checklists.nist.gov/xccdf/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdf="http://checklists.nist.gov/xccdf/1.1" xmlns:cpe="http://cpe.mitre.org/dictionary/2.0" xmlns:cpelang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" id="com_redhat_rhsa_20141293_xml_benchmark" resolved="0" xml:lang="en-US" xsi:schemaLocation="http://purl.org/dc/elements/1.1/ simpledc20021212.xsd http://www.w3.org/2000/09/xmldsig# xmldsig-core-schema.xsd http://cpe.mitre.org/dictionary/2.0 cpe-dictionary_2.0.xsd http://checklists.nist.gov/xccdf/1.1 xccdf-1.1.4.xsd http://cpe.mitre.org/language/2.0 cpe-language_2.0.xsd">
+  <status date="2015-04-30">draft</status>
+  <description>File content for OVAL file com.redhat.rhsa-20141293.xml built on 2014-09-24T11:11:45</description>
+  <version>v0.0</version>
+  <Profile id="ShellShock_Check">
+    <title>ShellShock_Check</title>
+    <select idref="xccdf_oval_com_redhat_rhsa_def_20141293_rule" selected="true" />
+  </Profile>
+  <Group id="ShellShock_Group">
+    <Rule id="xccdf_oval_com_redhat_rhsa_def_20141293_rule">
+      <title>RHSA-2014:1293: bash security update (Critical)</title>
+      <description>The GNU Bourne Again shell (Bash) is a shell and command language
+interpreter compatible with the Bourne shell (sh). Bash is the default
+shell for Red Hat Enterprise Linux.
+
+A flaw was found in the way Bash evaluated certain specially crafted
+environment variables. An attacker could use this flaw to override or
+bypass environment restrictions to execute shell commands. Certain
+services and applications allow remote unauthenticated attackers to
+provide environment variables, allowing them to exploit this issue.
+(CVE-2014-6271)
+
+For additional information on the CVE-2014-6271 flaw, refer to the
+Knowledgebase article at https://access.redhat.com/articles/1200223
+
+Red Hat would like to thank Stephane Chazelas for reporting this issue.
+
+All bash users are advised to upgrade to these updated packages, which
+contain a backported patch to correct this issue.</description>
+      <check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+        <check-content-ref href="com.redhat.rhsa-20141293.xml" name="oval:com.redhat.rhsa:def:20141293" />
+      </check>
+    </Rule>
+  </Group>
+</Benchmark>
+
