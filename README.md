@@ -18,8 +18,8 @@ This file will build a RPM suitable for deploying the RHSA
 [OVAL] (http://www.redhat.com/security/data/oval/ )and [XCCDF] (http://www.redhat.com/security/data/metrics/com.redhat.rhsa-all.xccdf.xml)
 content published by Red Hat
 
-## XCCDF from POODLE OVAL
-This file was generated using eSCAPe from the published
-Red Hat OVAL file for RHSA-2014:1653-00.  eSCAPe can read the
+## XCCDF from POODLE and Shellshock OVAL
+Generated using eSCAPe from the published
+Red Hat OVAL file for RHSA-2014:1653-00 and RHSA-2014:1293-00.  eSCAPe can read the
 published OVAL file and create an appropriate XCCDF file that
 can be used by Satellite for individual vulnerability scans.
